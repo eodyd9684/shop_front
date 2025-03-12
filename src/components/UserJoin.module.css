@@ -1,0 +1,9 @@
+.join_container{
+  background-color: powderblue;
+  border-radius: 4px;
+ 
+}
+
+.join_container > input{
+  border-radius: 4px;
+}
