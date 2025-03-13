@@ -1,17 +1,26 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from './UserHeader.module.css'
 import UserJoin from './UserJoin'
 import { Link } from 'react-router-dom'
 
-const UserHeader = () => {
-  
+const UserHeader = ({loginInfo, setLoginInfo}) => {
+  //로그인 정보를 저장할 state변수
+  // const [loginInfo, setLoginInfo] = useState(null)
 
+  
+  
 
   return (
     <div className={styles.headder_container}>
       <div className={styles.login_div}>
-        <span><Link to={'/login'}>LOGIN</Link></span>
-        <span><Link to={'/user'}>JOIN</Link></span>
+        {
+          loginInfo == null 
+          ? <><span><Link to={'/login'}>LOGIN</Link></span><span><Link to={'/user'}>JOIN</Link></span></> 
+          : <><span>{loginInfo.userId}</span><span onClick={() => {
+            sessionStorage.removeItem('loginInfo')
+            setLoginInfo(null)
+          }}>Logout</span></>
+        }
       </div>
       <div className={styles.banner_div}>
         <img src="/book_banner.PNG" />
