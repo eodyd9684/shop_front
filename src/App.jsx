@@ -14,6 +14,7 @@ import State변경함수흐름3 from "./components/practice/State변경함수흐
 import Login from "./components/Login";
 import StorageTest from "./components/practice/StorageTest";
 import { useEffect, useState } from "react";
+import UploadTest from "./components/practice/UploadTest";
 
 function App() {
   //sessionStorage에 있는 loginInfo 데이터 받아오기
@@ -52,6 +53,7 @@ function App() {
   return (
     <div className="container">
       {/* <StorageTest/> */}
+      <UploadTest/>
 
       <Routes>
         {/* 유저가 접속하는 페이지 */}
@@ -66,7 +68,7 @@ function App() {
           <Route path="login" element={<Login setLoginInfo={setLoginInfo}/>}></Route>
         </Route>
           {/* 관리자가 접속하는 페이지 */}
-        <Route path="/admin" element={<AdminLayout />}>
+        <Route path="/admin" element={<AdminLayout loginInfo={loginInfo} setLoginInfo={setLoginInfo}/>}>
         {/* 상품등록 */}
         <Route path="reg-item" element={<ItemForm />}/>
         {/* 회원관리 */}

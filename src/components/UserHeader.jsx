@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import styles from './UserHeader.module.css'
 import UserJoin from './UserJoin'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const UserHeader = ({loginInfo, setLoginInfo}) => {
   //로그인 정보를 저장할 state변수
   // const [loginInfo, setLoginInfo] = useState(null)
+  const nav = useNavigate()
 
   
   
@@ -19,6 +20,7 @@ const UserHeader = ({loginInfo, setLoginInfo}) => {
           : <><span>{loginInfo.userId}</span><span onClick={() => {
             sessionStorage.removeItem('loginInfo')
             setLoginInfo(null)
+            nav('/')
           }}>Logout</span></>
         }
       </div>

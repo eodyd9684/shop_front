@@ -59,7 +59,10 @@ const Login = ({setLoginInfo}) => {
         sessionStorage.setItem('loginInfo', JSON.stringify(loginInfo))
         console.log(res.data)
         setLoginInfo(loginInfo)//app에 있는 loginInfo에 저장
-        nav('/')
+
+        //로그인한 유저의 권한에 따라 이동할 페이지를 지정
+        //일반회원 : 상품 목록 페이지, 관리자 : 상품등록 페이지
+        nav(loginInfo.userRoll === 'USER' ? '/' : '/admin/reg-item')
       }
     })
     .catch()
