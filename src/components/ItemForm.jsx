@@ -10,6 +10,9 @@ const ItemForm = () => {
   //카테고리 목록을 저장할 변수
   const [cateList, setCateList] = useState([])
 
+  //첨부파일 input 태그에서 선택한 파일을 저장할 변수
+  const [firstFile, setFirstFile] = useState(null)
+
   //input 태그들에 입력한 데이터를 저장하는 변수
   const [bookList, setBookList] = useState({
     bookName : '',
@@ -18,6 +21,11 @@ const ItemForm = () => {
     bookInfo : '',
     cateCode : 1
   });
+
+  //자바로 데이터를 전달할 때 문자뿐만 아니라 파일 데이터도 가져간다는 것을 설정
+  const fileConfig = {header:{'Content-Type' : 'multipart/form-data'}}
+
+
 
   //카테고리 목록 조회
   useEffect(() => {
@@ -39,12 +47,17 @@ const ItemForm = () => {
 
   //등록 버튼 클릭 시 도서 등록 실행
   const regBook = () => {
-    insertBook(bookList)
+    const form = new FormData()
+    form.append('fristFile', firstFile)
+
+    insertBook(bookList, fileConfig)
     .then(res => {
       alert('등록완료');
     })
     .catch(error => console.log(error))
   }
+
+  
   
 
   return (
