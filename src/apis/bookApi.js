@@ -50,6 +50,8 @@ export const getCategoryList = () => {
   }
  */
 export const insertBook = (bookList) => {
- const response = axios.post('/api/books', bookList)
+  //자바로 데이터를 전달할 때 문자뿐만 아니라 파일 데이터도 가져간다는 것을 설정
+  const fileConfig = {header:{'Content-Type' : 'multipart/form-data'}}
+ const response = axios.post('/api/books', bookList, fileConfig)
  return response;
 }

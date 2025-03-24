@@ -51,6 +51,7 @@ const UploadTest = () => {
       <button type='button' onClick={() => {
         const form2 = new FormData()
 
+        //파일 첨부를 했을 때만.
         if(secondFiles != null){
           //첨부한 파일 갯수만큼 formData에 저장
           for(const eachFile of secondFiles){

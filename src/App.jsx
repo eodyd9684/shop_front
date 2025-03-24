@@ -53,7 +53,8 @@ function App() {
   return (
     <div className="container">
       {/* <StorageTest/> */}
-      <UploadTest/>
+      {/* 파일 업로드 */}
+      {/* <UploadTest/> */}
 
       <Routes>
         {/* 유저가 접속하는 페이지 */}
