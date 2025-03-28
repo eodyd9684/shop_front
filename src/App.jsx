@@ -1,20 +1,13 @@
-import { Route, Routes } from "react-router-dom";
-import "./App.css";
-import UserLayout from "./components/UserLayout";
-import AdminLayout from "./components/AdminLayout";
-import ItemForm from "./components/ItemForm";
-import CateManage from "./components/CateManage";
-import State변경함수흐름 from "./components/practice/State변경함수흐름";
-import Axios흐름 from "./components/practice/Axios흐름";
-import ShopButton from "./common_component/ShopButton";
-import ShopInput from "./common_component/ShopInput";
-import UserJoin from "./components/UserJoin";
-import State변경함수2 from "./components/practice/State변경함수2";
-import State변경함수흐름3 from "./components/practice/State변경함수흐름3";
-import Login from "./components/Login";
-import StorageTest from "./components/practice/StorageTest";
 import { useEffect, useState } from "react";
-import UploadTest from "./components/practice/UploadTest";
+import "./App.css";
+import { Route, Routes } from "react-router-dom";
+import UserLayout from "./routes/common/UserLayout";
+import UserJoin from "./routes/member/UserJoin";
+import Login from "./routes/member/Login";
+import CateManage from "./routes/book/CateManage";
+import AdminLayout from "./routes/common/AdminLayout"
+import ItemForm from "./routes/book/ItemForm"
+
 
 function App() {
   //sessionStorage에 있는 loginInfo 데이터 받아오기
