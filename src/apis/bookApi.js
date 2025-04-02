@@ -55,3 +55,9 @@ export const insertBook = (bookList) => {
  const response = axios.post('/api/books', bookList, fileConfig)
  return response;
 }
+
+//도서 목록 조회
+export const getBookList = () => {
+  const response = axios.get('/api/books')
+  return response;
+}

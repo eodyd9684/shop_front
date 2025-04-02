@@ -7,6 +7,7 @@ import Login from "./routes/member/Login";
 import CateManage from "./routes/book/CateManage";
 import AdminLayout from "./routes/common/AdminLayout"
 import ItemForm from "./routes/book/ItemForm"
+import ItemList from "./routes/book/ItemList";
 
 
 function App() {
@@ -53,7 +54,7 @@ function App() {
         {/* 유저가 접속하는 페이지 */}
         <Route path="/" element={<UserLayout loginInfo={loginInfo} setLoginInfo={setLoginInfo}/>}>
           {/* 상품 목록 페이지 */}
-          <Route path="" element={<div>상품 목록 페이지</div>}/>
+          <Route path="" element={<ItemList/>}/>
           {/* 상품 상세 페이지 */}
           <Route path="detail" element={<div>상품 상세 페이지</div>} />
           {/* 회원가입 */}

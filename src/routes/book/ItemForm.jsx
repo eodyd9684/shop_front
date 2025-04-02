@@ -62,6 +62,18 @@ const ItemForm = () => {
     insertBook(regForm)
       .then((res) => {
         alert("등록완료");
+
+        //데이터 초기화
+        setBookList({
+          cateCode: 1,
+          bookName: "",
+          bookPrice: 0,
+          publisher: "",
+          bookInfo: ""
+        })
+
+        setMainImg(null)
+        setSubImg(null)
       })
       .catch((error) => console.log(error));
   };
